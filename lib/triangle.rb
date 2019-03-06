@@ -14,20 +14,9 @@ class Triangle
         return :equilateral if @one == @two && @one == @three
         return :isosceles if @one == @two && @one != @three || @one == @three && @one != @two || @two == @three && @two != @one
         return :scalene if @one != @two && @one != @three && @two != @three
-      else
-        begin
-          raise TriangleError
-        rescue TriangleError => error
-          puts error.message
-        end
-      end
-    else
-      begin
-        raise TriangleError
-      rescue TriangleError => error
-        puts error.message
       end
     end
+    raise TriangleError
   end
   
   class TriangleError < StandardError
