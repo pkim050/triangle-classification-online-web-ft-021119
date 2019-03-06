@@ -16,7 +16,8 @@ class Triangle
         return :scalene if @one != @two && @one != @three && @two != @three
       end
     end
-    raise TriangleError
+    begin
+      raise TriangleError
     rescue TriangleError
       puts error.message
   end
